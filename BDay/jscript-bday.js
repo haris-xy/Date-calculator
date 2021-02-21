@@ -3,7 +3,7 @@ document.querySelector('#yell').addEventListener('click', run)
 function run() {
 
 // Input values of date and month
-
+  let datum = document.getElementById("bday").value 
   let day = Number(document.querySelector('#day').value)  
   let month = Number(document.querySelector('#month').value)
   
@@ -145,7 +145,7 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
     console.log(monthName);
     console.log(day);
     console.log(calculateOne);
-
+    console.log(datum);
 }
 
 //p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1
