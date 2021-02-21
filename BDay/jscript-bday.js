@@ -90,14 +90,10 @@ switch (month) {
 // checking if the dates are proper
 
 if (day > 31) {
-    alert(messageAlert)    
-
+    alert(messageAlert)  
 } else if (day > 30 && (month == 4 || month == 6 || month == 9 || month == 11)) {
-
  alert(messageAlert)
-
 } else if (day > 29 && month == 2) {
-
  alert(messageAlert)
 }
 
@@ -151,3 +147,5 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
     console.log(calculateOne);
 
 }
+
+//p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1
