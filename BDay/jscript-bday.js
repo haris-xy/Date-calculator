@@ -2,15 +2,14 @@ document.querySelector('#yell').addEventListener('click', run)
 
 function run() {
 
-// Input values of date and month
-  let datum = document.getElementById("bday").value 
+// Input values of date and month 
   let day = Number(document.querySelector('#day').value)  
   let month = Number(document.querySelector('#month').value)
   
 // variables for calculation and alerts
 
   let calculateOne = 0;
-  let messageAlert = "Try another day.";  
+  let messageAlert = "Try another day.";
 
 // varibales for seasons
 
@@ -140,12 +139,16 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
             
             break;
     }
+
+    let outputMsg;
+    document.getElementById("placeToYell").innerHTML = `You were born on the ${calculateOne} day of the year, in the month of ${monthName}, day ${day}, and the season was ${season}.`;
+
     console.log(firstDayOf);
     console.log(season);
     console.log(monthName);
     console.log(day);
     console.log(calculateOne);
-    console.log(datum);
+  
 }
 
 //p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1

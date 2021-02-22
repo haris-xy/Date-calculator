@@ -1,14 +1,14 @@
 html{
-    background-color: aquamarine;
+    background-color:whitesmoke;
 }
 
 
-.hidden:hover {
+.hidden {
 
     /*transform: scale(1.005); */
     /* width: 800px; */
     /* height: 600px; */
-  
+  display: none;
     }
 
 
