@@ -1,24 +1,26 @@
 document.querySelector('#yell').addEventListener('click', run)
 
 function run() {
-
 // Input values of date and month 
-  let day = Number(document.querySelector('#day').value)  
-  let month = Number(document.querySelector('#month').value)
-  
+  let day = Number(document.querySelector('#myDayList').value)  
+  let month = Number(document.querySelector('#myMonthList').value)
 // variables for calculation and alerts
-
   let calculateOne = 0;
-  let messageAlert = "Try another day.";
-
+  let messageAlert = "Try a proper date.";
 // varibales for seasons
-
   let season;
   let firstDayOf;
 
-// Calculations of month
+  // checking if the dates are proper
+if (day > 31) {
+    alert(messageAlert)  
+} else if (day > 30 && (month == 4 || month == 6 || month == 9 || month == 11)) {
+ alert(messageAlert)
+} else if (day > 29 && month == 2) {
+ alert(messageAlert)
+} else {
 
-
+  // Calculations of month
 switch (month) {
     case 1:
         calculateOne = day + calculateOne;       
@@ -86,69 +88,64 @@ switch (month) {
         monthName = "";
 }
 
-// checking if the dates are proper
-
-if (day > 31) {
-    alert(messageAlert)  
-} else if (day > 30 && (month == 4 || month == 6 || month == 9 || month == 11)) {
- alert(messageAlert)
-} else if (day > 29 && month == 2) {
- alert(messageAlert)
-}
 
 // Caluclation of the season 
-
 if (calculateOne <= 79 || calculateOne >= 354 ) {
     season = "Winter";
-
 } else if (calculateOne >= 79 && calculateOne < 172) {
     season = "Spring";    
-
 } else if (calculateOne >= 172 && calculateOne < 265) {
     season = "Summer";
-
 } else if (calculateOne >= 265 && calculateOne < 354) {
     season = "Fall";
 }
 
 // Calculation of the first day of the season
-
     switch (calculateOne) {
         case 79:
         firstDayOf = "Spring"
-        
-            break;
+        break;
         
         case 172:
         firstDayOf = "Summer"
-
-            break;
+        break;
 
         case 265:
         firstDayOf = "Fall"
-
-            break;
+        break;
         
         case 354:
         firstDayOf = "Winter"    
-        
-            break;
+        break;
 
         default:
         firstDayOf = "";
-            
-            break;
+        break;
     }
 
     let outputMsg;
+    
     document.getElementById("placeToYell").innerHTML = `You were born on the ${calculateOne} day of the year, in the month of ${monthName}, day ${day}, and the season was ${season}.`;
 
+    
     console.log(firstDayOf);
     console.log(season);
     console.log(monthName);
     console.log(day);
     console.log(calculateOne);
-  
+    
+    // Getting a photo of the day from NASA.
+    fetch("https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1&start_date=2020-10-13")
+  .then(res => res.json()) // parse response as JSON
+    .then(data => {
+      console.log(data)
+    document.querySelector('#slika').src = data[0].url})
+    .catch(err => {
+        console.log(`error ${err}`)
+    });
+    
+
+}
 }
 
 //p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1
