@@ -8,9 +8,13 @@
     
 </head>
 <body>
+    <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
 
                 <!-- Photos for each month. -->
-    <section id="photos">
+    <!-- <section id="photos">
         <img class="hidden" id="January" src="Photos/January.jpg" alt="January">
         <img class="hidden" id="February"  src="Photos/February.jpg" alt="February">
         <img class="hidden" id="March"  src="Photos/March.jpg" alt="March">
@@ -23,11 +27,11 @@
         <img class="hidden" id="October"  src="Photos/October.jpg" alt="October">
         <img class="hidden" id="November"  src="Photos/November.jpg" alt="November">
         <img class="hidden" id="December"  src="Photos/December.jpg" alt="December">
-    </section>
+    </section> -->
 
                 <!-- Selecting a day and month. -->
-    <form>  
-        <label for="day"> Day </label>
+    <form id="inputDates">  
+        <label id="dayChoice" for="day"> Day </label>
         <!-- <input id="day" type="number" min="1" max="31" placeholder="Day"> -->
         <select id = "myDayList">
             <option value = "1">1</option>
@@ -77,23 +81,29 @@
             <option value = "11">November</option>
             <option value = "12">December</option>
         </select>  
-        <!-- <input id="month" type="number" min="1" max="12" placeholder="Month">        -->
     </form>
-    
+
+    <div class="content">
+        <button id="doMathBtn">Calculate</button>
+      </div>
+
     <!-- Image for that day from NASA. -->
-    <img id="photoo"src="" alt="">
+    <div id="imgContainer">
+        <img id="nasaImg"src="" alt="">
+    </div>
+    
     
         <!-- Temp. breaks in the line, till CSS is finished -->
     <br><br>    
     
-        <!-- Button for starting the app. -->
-    <button id="yell" type="button" name="button">Calculate</button>   
+    
 
 <h2>Here is the result:</h2>
     <h2 id="placeToYell"></h2>
     <br>
     <br>
     <h2 id="placeToYell2"></h2>
+    <button id="getPhoto">Click here</button>
     <img src="" alt="" id="slika">
     <script src="jscript-bday.js"></script>
 </body>
