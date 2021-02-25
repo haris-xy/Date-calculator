@@ -134,11 +134,12 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
     console.log(day);
     console.log(calculateOne);
     
-    fetch(url + month + "-" + day + '"')
+    fetch('https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1&date=2020-10-07')
   .then(res => res.json()) // parse response as JSON
     .then(data => {
       console.log(data)
-    document.querySelector('#nasaImg').src = data[0].url})
+      console.log(data.url);
+    document.querySelector('#nasaImg').src = data.url})
     .catch(err => {
         console.log(`error ${err}`)
     });}
@@ -147,7 +148,7 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
 
 
 //p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1
-//     const url = '"https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1&start_date=2020-"'
+    // const url = '"https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1"'
 //   // Getting a photo of the day from NASA.
 //   document.querySelector('#getPhoto').addEventListener('click', getNasaPhoto)
   
