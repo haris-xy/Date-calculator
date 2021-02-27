@@ -141,7 +141,8 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
     .then(data => {
       console.log(data)
       console.log(data.url);
-    document.querySelector('#nasaImg').src = data.url})
+    document.querySelector('#nasaImg').src = data.url
+    document.querySelector('#picExplanation').innerHTML = data.explanation})
     .catch(err => {
         console.log(`error ${err}`)
     });}
