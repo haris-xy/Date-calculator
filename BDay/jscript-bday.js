@@ -133,8 +133,10 @@ if (calculateOne <= 79 || calculateOne >= 354 ) {
     console.log(monthName);
     console.log(day);
     console.log(calculateOne);
-    
-    fetch('https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1&date=2020-10-07')
+    console.log(month);
+    let url = 'https://api.nasa.gov/planetary/apod?api_key=p5hzB7zv7TWGmQRVeA6lR9cj3eSelvrYrcXS7et1&date=2020-'
+    let newDate = month + "-" + day    
+    fetch(url + newDate)
   .then(res => res.json()) // parse response as JSON
     .then(data => {
       console.log(data)
